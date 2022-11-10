@@ -17,6 +17,10 @@ function createGallery(galleryItems) {
 }
 
 galleryConteiner.insertAdjacentHTML('beforeend', items)
+var lightbox = new SimpleLightbox('.gallery a', { 
+captionsData: "alt",
+captionDelay: 250,
+});
 
 galleryConteiner.addEventListener('click', onGalleryContainerClick)
 
@@ -25,10 +29,5 @@ function onGalleryContainerClick(e) {
     e.preventDefault();
     if (e.target.nodeName !== 'IMG') {
         return;
-    } else {
-var lightbox = new SimpleLightbox('.gallery a', { 
-captionsData: "alt",
-captionDelay: 250,
-});
-    }
+    } 
 }
